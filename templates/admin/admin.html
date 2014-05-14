@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<div class='block15'>
+		<nav id="nav_buttons_wrapper">
+		</nav>
+	</div>
+	<div class='block9'>
+	</div>
+{% endblock %}
+
+{% block below_header %}
+	<div class='block15'>
+		<article id='logo_and_slogan_wrapper'>
+			<div id='logo_section'>
+				<span class='logo1_big'>u</span><span class='logo2_big'>Fundy</span><span class='section_Logo'>Admin</span>
+			</div>
+		</article>
+	</div>
+
+	<div class='block9'>
+		<div class='ta_right' id='nav_buttons_wrapper'>
+			<a href='{{logout_url}}' class='button'>Logout Here</a>
+		</div>		
+	</div>
+{% endblock %}
+
+{% block full_page %}
+	<div class='column_container'>
+		<article>
+			<div class='block12'>
+				{% if waitinglist is defined %}
+					<h1>Waiting List</h1>
+					<table>
+						<tbody>
+							<tr>
+								<th>Email</th>
+								<th class='ta_center'>Company</th>
+								<th class='ta_center'>Founder</th>
+								<th class='ta_center'>Count</th>
+								<th>Action</th>
+							</tr>
+							{% if waitinglist %}
+								{% for user in waitinglist %}
+									<tr>
+										<td>{{user.email}}</td>
+										<td class='ta_center'>{% if user.company %}{{user.company}}{% else %}--{% endif %}</td>
+										<td class='ta_center'>{% if user.company %}{{user.founder}}{% else %}--{% endif %}</td>
+										<td class='ta_center'>{{user.count}}</td>
+										<td>
+											<form action='{{delete_waitinglist_action}}' method='POST'>
+												<input type='hidden' id='user_email' name='user_email' value='{{user.email}}'>
+												<button type='submit'>X</button>
+											</form>
+										</td>
+									</tr>
+								{% endfor %}
+							{% else %}
+								<tr>
+									<td colspan='4'>
+										<p>No People on the WaitingList</p>
+									</td>
+								</tr>
+							{% endif %}
+						</tbody>
+					</table>
+				{% else %}
+					<p>There is an error in defining the Waiting List</p>
+				{% endif %}
+			</div>
+			<div class='block12'>
+				<div id=''>
+					<h1>Add Name to Waiting List</h1>
+					<form action='{{add_waitinglist_action}}' method='POST'>
+						<table>
+							{% for field in form_add_waitinglist %}
+								<tr>
+							        <th class='ta_right'>
+										<label>{{ field.label }}{% if field.flags.required %}&nbsp;*&nbsp;{% endif %}:</label>
+									</th>
+							        <td>
+										<div class='input_field'>{{ field }}</div>
+									</td>
+								</tr>
+								{% if field.errors  %}
+									<tr>
+										<th>Error</th>
+										<td><ul class="errors">{% for error in field.errors %}<li>{{ error|e }}</li>{% endfor %}</ul></td>
+									</tr>
+								{% endif %}
+							{% endfor %}
+							<tr>
+								<th></th>
+								<td>
+									<button type='submit'>Send</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</article>
+	</div>
+{% endblock %}
+
+{% block above_footer %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block below_footer %}
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

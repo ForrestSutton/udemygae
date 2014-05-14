@@ -1,23 +1,15 @@
-#!/usr/bin/env python
-# encoding: utf-8
+#!/usr/bin/python
 """
 public_handlers.py
-
-Created by Jason Elbourne on 2012-02-01.
-Copyright (c) 2012 Jason Elbourne. All rights reserved.
 """
 
 import logging
-
 import webapp2
-
 from testapp import basehandler
 #from testapp.message import mail_handlers
-
-import public_forms as forms
+#import public_forms as forms
 
 #from testapp.waitinglist import waitinglist_models as wl_models
-
 
 class HomeHandler(basehandler.BaseHandler):
 	def get(self):
@@ -27,8 +19,8 @@ class HomeHandler(basehandler.BaseHandler):
 
 		context = {'page_title': page_title, \
 					'page_description': page_description, \
-					'form_contact': self.form_contact, \
-					'form_waiting': self.form_waiting, \
+					#'form_contact': self.form_contact, \
+					#'form_waiting': self.form_waiting, \
 					#'waiting_action': webapp2.uri_for('waiting_list_submit', _full=True), \
 					#'contact_action': webapp2.uri_for('contact_submit', _full=True), \
 					}

@@ -1,7 +1,200 @@
 {% extends 'base.html' %}
 
+{% block header %}
+	<div class='block15'>
+		<nav id="nav_buttons_wrapper">
+			{% block section_menu %}
+				<a href="#what_is_uFundy" class="button">What is uFundy?</a>
+				<a href="#how_it_works" class="button">How it Works (Infographic)</a>
+				<a href="#crowdfunding_law" class="button">CrowdFunding Law</a>
+				<a href="#contact" class="button">Contact Us</a>
+			{% endblock %}
+		</nav>
+	</div>
+	<div class='block9'>
+		<!-- AddThis Button BEGIN -->
+		<div id='addthis_label_wrapper'>Share This Page:</div>
+	    <div id='addthis_wrapper' class="addthis_toolbox addthis_default_style addthis_32x32_style">
+	        <span><a class="addthis_button_preferred_1"></a></span>
+	        <span><a class="addthis_button_preferred_2"></a></span>
+	        <span><a class="addthis_button_preferred_3"></a></span>
+	        <span><a class="addthis_button_preferred_4"></a></span>
+	        <span><a class="addthis_button_preferred_5"></a></span>
+	        <span><a class="addthis_button_compact"></a></span>
+	        <span><a class="addthis_counter addthis_bubble_style"></a></span>
+	    </div>
+		<!-- AddThis Button END -->
+	</div>
+
+{% endblock %}
+
+{% block below_header %}
+	<div class='block15'>
+		<article id='logo_and_slogan_wrapper'>
+			<div id='logo_section'>
+				<span class='logo1_big'>u</span><span class='logo2_big'>Fundy</span><!-- <span class='slogan'>Funding the World</span> -->
+			</div>
+		</article>
+		<article id='call_to_action_wrapper'>
+			<header class="splash_headline">THE NEW CROWDFUNDING. EARLY BIRDS GET THE EQUITY!</h1>
+			<header class="splash_subheading">YOUR FUNDING PORTAL FOR INVESTING IN STARTUPS, SMALL BUSINESSES &AMP; NON-PROFITS.</p>
+		</article>
+	</div>
+
+	<div class='block8'>
+		<article id='waitinglist_form_wrapper'>
+			<div class="signup">
+				<header class='sign_up_header'><span class='orange'>SIGN UP NOW</span> <br/> FOR CLOSED BETA <br/><span class='fineprint'>Waiting List Submission</span></header>
+				<form id="signup_form" action='{{waiting_action}}' method="post">
+					<input type="text" class="email" id="email" name="email" placeholder="Email Address" onfocus="if(this.value == 'Email Address') {this.value = '';}">
+					<input type="text" class="company" id="company" name="company" placeholder="Company URL" onfocus="if(this.value == 'Company URL') {this.value = '';}"><br />
+					<label for="founder"><input type="checkbox" class="founder" id="founder" name="founder" onclick="this.form.company.style.display = this.checked? 'inline' : 'none';">
+	<span>I Need Funding</span></label>
+					<button type="submit" class="orange" id="submit" alt="Sign Up">Sign Up</button>
+				</form>
+			</div>
+		</article>
+	</div>
+	<div class='block1'>
+		
+	</div>
+{% endblock %}
+
 {% block full_page %}
-	<article id='empty_page_text'>
-		<div id='subheading'>{{message}}</div>
-	</aticle>
+	<div class='column_container'>
+		<a id="what_is_uFundy"></a>
+		<article>
+			<div class='block12'>
+				<div id='what_is_uFundy_text_wrapper'>
+					<div>
+						<h1>What is CrowdFunding?</h1>
+						<p>CrowdFunding describes the collective cooperation of people who network and pool their money to support Start-Ups, Small Businesses and Non-Profits</p>
+						<p>There are two types of CrowdFunding on uFundy. The Donation model which is a donation to a company and the Equity model which gives the investor equity in a corporation.</p>
+					</div>
+					<div>
+						<h1>Why is uFundy better than other portals?</h1>
+						<p>1 - uFundy also gives you an Entry Strategy like no other portal.</p>
+						<p>2 - uFundy accommodates six different types of projects/funding</p>
+						<p>3 - uFundy will make both the Donation model and Equity model available.</p>
+					</div>
+				</div>
+			</div>
+			<div class='block12'>
+				<div id='what_is_uFundy_video_wrapper'>
+					<div>
+						<iframe width="475" height="271" src="http://www.youtube.com/embed/?HD=1;rel=0;showinfo=0;autohide=1" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+	
+	<div class='column_container'>
+		<a id="how_it_works"></a>
+		<article>
+			<div class='block24'>
+				<h1>How it all Works (Infographic)</h1>
+				<div id='infographic_wrapper'>
+					<img src='/img/crowdfunding.png' width='1180px'/>
+				</div>
+			</div>
+		</article>
+	</div>
+	
+	<div class='column_container'>
+		<a id="crowdfunding_law"></a>
+		<article>
+			<div class='block24'>
+				<div id='crowdfunding_law_wrapper'>
+					<h1>CrowdFunding Law</h1>
+					<p>The CROWDFUND Act that is expected to be signed into law by President Obama will enable entrepreneurs to raise funds through Business Crowdfunding.</p>
+					<p>Unlike the Donation Model which does not allow any return on funds invested, Business Crowdfunding will allow investors to receive a financial return through the purchase of equity, debt, or revenue-based securities.</p>
+					<ul class='bullet'>
+		            	<li>A company can crowdfund up to $1 million over a 12 month period ($2,000,000 with audited financials)</li>
+		                <li>Individuals earning less than $100,000 may invest up to $2,000 or 5 percent of annual income, whichever is greater, over a 12Th month period. Individuals earning $100,000 or more may
+		                 invest up to 10% of annual income, capped at $100,000, over a 12 month period</li>
+		                <li>Investors can fund one company or several companies as long as they remain within these annual limits</li>
+		                <li>Companies crowdfunding must be registered/incorporated in the U.S.</li>
+		                <li>Companies crowdfunding must provide a description of their ownership and capital structure</li>
+		                <li>An investor must wait 12 months before selling her/his securities unless the sale is to a family member, the issuing company, or an accredited investor</li>
+		                <li>A crowdfunding round does not prevent a company from raising capital through other legal channels</li>
+		                <li>Top employees of issuing companies must successfully undergo a background check</li>
+		                <li>Companies crowdfunding are exempted from the 500 shareholder cap.</li>
+		            </ul>
+				</div>
+			</div>
+		</article>
+	</div>
+
+	<div class='column_container'>
+		<article>
+			<a id="contact"></a>
+			<div class='block12'>
+				<h1>Contact Us</h1>
+				<p>Have a question or just want to say hello, contact uFundy with this form.</p>
+				<div id=''>
+					<form action='{{contact_action}}' method='post'>
+						<table>
+							{% for field in form_contact %}
+								<tr>
+									{% if field.type == "TextAreaField"%}
+								        <th class='ta_right'>
+											<label>{{ field.label }}:</label>
+										</th>
+								        <td>
+											<div class='input_field'>
+													<textarea name='startup_description' rows='6' id='startup_description'></textarea>
+											</div>
+										</td>
+								    {% else %}
+								        <th class='ta_right'>
+											<label>{{ field.label }}{% if field.flags.required %}&nbsp;*&nbsp;{% endif %}:</label>
+										</th>
+								        <td>
+											<div class='input_field'>{{ field }}</div>
+										</td>
+								    {% endif %}
+								</tr>
+								{% if field.errors  %}
+									<tr>
+										<th>Error</th>
+										<td><ul class="errors">{% for error in field.errors %}<li>{{ error|e }}</li>{% endfor %}</ul></td>
+									</tr>
+								{% endif %}
+							{% endfor %}
+							<tr>
+								<th></th>
+								<td>
+									<button type='submit'>Send</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class='block12'>
+				<h1>Investors</h1>
+				<p>If you are interested in investing in uFundy and would like some more information please drop us an email at investors@uFundy.com</p>
+
+				<h1>Careers</h1>
+				<p>If you have a skill which you feel would benefit uFundy and you want to be part of the next big internet industry. Please drop us an email careers@uFundy.com. </p>
+				
+				<h1>General Inquiry</h1>
+				<p>If you simply have a general comment or would like to let us know what you think. Please drop us an email info@uFundy.com. </p>
+			</div>
+		</article>
+	</div>
+{% endblock %}
+
+{% block above_footer %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
+{% block below_footer %}
+{% endblock %}
+
+{% block scripts %}
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4f9c33e2687bc8da"></script>
 {% endblock %}
