@@ -23,7 +23,7 @@ handlers:
 - url: /img/(.*\.png)
   mime_type: image/png
   static_files: static/img/\1
-  upload: static/images/(.*\.png)
+  upload: static/img/(.*\.png)
 
 # - url: /_ah/unittest/.*
 #   script: unittests.app
