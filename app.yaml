@@ -21,8 +21,8 @@ handlers:
   upload: static/js/(.*\.js)
 
 - url: /img/(.*\.png)
-  mime_type: text/javascript
-  static_files: static/images/\1
+  mime_type: image/png
+  static_files: static/img/\1
   upload: static/images/(.*\.png)
 
 # - url: /_ah/unittest/.*
