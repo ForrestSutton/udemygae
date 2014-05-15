@@ -25,8 +25,8 @@ handlers:
   static_files: static/img/\1
   upload: static/img/(.*\.png)
 
-# - url: /_ah/unittest/.*
-#   script: unittests.app
+- url: /_ah/unittest/.*
+  script: unittests.app
 
 - url: .*
   script: main.app
